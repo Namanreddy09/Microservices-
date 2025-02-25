@@ -1,0 +1,27 @@
+Explanation of SOLID Principles in Action:
+
+1.Single Responsibility Principle (SRP):
+
+Each class has one responsibility. For example, Manager handles only manager-specific tasks,
+Developer handles development tasks, and SecurityGuard handles security.
+
+2.Open/Closed Principle (OCP):
+
+The system is open for extension: If you want to add a new role (e.g., Intern), you can extend the Employee class 
+and add the role-specific functionality without modifying the existing classes.
+The system is closed for modification: The EmployeeService does not need to change to accommodate new roles.
+
+3.Liskov's Substitution Principle (LSP):
+
+Any Employee (Manager, Developer, or Security Guard) can be substituted in the EmployeeService without affecting the behavior.
+The EmployeeService just calls performRole(), and each subclass of Employee correctly handles the specific role actions.
+
+4.Interface Segregation Principle (ISP):
+
+Role-specific actions are defined in small, focused interfaces like ManagerActions, DeveloperActions, and SecurityGuardActions. 
+This ensures that clients (employees) only depend on methods relevant to their role, not an oversized, generalized interface.
+
+5.Dependency Inversion Principle (DIP):
+
+EmployeeService depends on the abstract class Employee rather than concrete role classes like Manager or Developer.
+This allows the system to add new roles easily without modifying the core logic of EmployeeService.
